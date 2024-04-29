@@ -37,10 +37,9 @@ class Solution:
                     # print("Back",n)
                 else:
                     ans = n
-        print(ans)
         count = 0
         while ans % 10 == 0:
-            count += 1
+            count += 1 
             ans //= 10
         
         return count

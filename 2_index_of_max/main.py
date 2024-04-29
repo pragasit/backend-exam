@@ -20,4 +20,20 @@ output = list can not blank
 class Solution:
 
     def find_max_index(self, numbers: list) -> int | str:
-        pass
+        num = numbers[0]
+        for i in numbers:
+            if num <= i:
+                num = i
+        return num
+
+        
+
+
+def main():
+    sol = Solution()
+    input_str = input("Enter a list of number : ")
+    list_number = eval(input_str)
+    print("Index of maximum number in list :",sol.find_max_index(list_number))
+
+
+main()
