@@ -20,4 +20,10 @@ output = number can not less than 0
 class Solution:
 
     def number_to_thai(self, number: int) -> str:
-        pass
+        return number
+
+def main():
+    sol = Solution()
+    num = int(input())
+    print(sol.number_to_thai(num))
+main()

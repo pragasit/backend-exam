@@ -41,15 +41,11 @@ class Solution:
         while ans % 10 == 0:
             count += 1 
             ans //= 10
-        
         return count
 
-
-
-#start
+#Start
 def main():
     sol = Solution()
     num = int(input())
-    print(sol.find_tailing_zeroes(num))
-
+    print(sol.find_tailing_zeroes("",num))
 main()
