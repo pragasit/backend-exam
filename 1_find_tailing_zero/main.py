@@ -32,13 +32,18 @@ class Solution:
                 if num > 0:
 
                     # print("n",n)
-                    # print("n1",num)
+                    # print("num",num)
                     n = n*num
                     # print("Back",n)
                 else:
                     ans = n
         print(ans)
-
+        count = 0
+        while ans % 10 == 0:
+            count += 1
+            ans //= 10
+        
+        return count
 
 
 
