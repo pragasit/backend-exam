@@ -18,6 +18,34 @@ output = number can not be negative
 
 
 class Solution:
-
+    
     def find_tailing_zeroes(self, number: int) -> int | str:
-        pass
+        ans = 0
+        if number < 0:
+            return "number can not be negative"
+        else:
+            n = number   ## 7
+            num = number
+            for i in range(number): ## count 7 
+                # print("font",n)
+                num = num-1
+                if num > 0:
+
+                    # print("n",n)
+                    # print("n1",num)
+                    n = n*num
+                    # print("Back",n)
+                else:
+                    ans = n
+        print(ans)
+
+
+
+
+#start
+def main():
+    sol = Solution()
+    num = int(input())
+    print(sol.find_tailing_zeroes(num))
+
+main()
