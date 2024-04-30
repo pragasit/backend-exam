@@ -31,14 +31,15 @@ class Solution:
         if number == 0:
             return self.numbers[number]
         
-        if (0 > number > 10_000_000):
-            print("-")
+        if not (0 < number < 10_000_000):
             return "number can not less than 0 or greater than 10,000,000"
         
         return number
 
 def main():
     sol = Solution()
-    num = int(input("Enter a positive number (0-10,000,000): "))
+    num = input("Enter a positive number (0-10,000,000): ")
+    print(num)
+    num = int(num.replace(",", ""))
     print(sol.number_to_thai(num))
 main()
