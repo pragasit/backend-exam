@@ -34,12 +34,27 @@ class Solution:
         if not (0 < number < 10_000_000):
             return "number can not less than 0 or greater than 10,000,000"
         
-        return number
+
+        thai_number = []
+        for place in [1000000, 100000, 10000, 1000, 100, 10, 1]:
+            digit = number // place
+            number %= place
+            if digit > 0:
+                if digit == 1 and place == 10:
+                    thai_number.append(self.places[place])
+                else:
+                    thai_number.append(self.numbers[digit])
+                    thai_number.append(self.places[place])
+            str1 = ""
+            for i in thai_number:
+                str1 += i
+        return str1
 
 def main():
-    sol = Solution()
+    sol = Solution() 
     num = input("Enter a positive number (0-10,000,000): ")
     print(num)
     num = int(num.replace(",", ""))
     print(sol.number_to_thai(num))
 main()
+
