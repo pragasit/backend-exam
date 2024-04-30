@@ -18,12 +18,27 @@ output = number can not less than 0
 
 
 class Solution:
+    def __init__(self):
+        # number to thai
+        self.numbers = {
+            0: 'ศูนย์', 1: 'หนึ่ง', 2: 'สอง', 3: 'สาม', 4: 'สี่',
+            5: 'ห้า', 6: 'หก', 7: 'เจ็ด', 8: 'แปด', 9: 'เก้า'
+        }
+        # digit to thai
+        self.places = {1: '', 10: 'สิบ', 100: 'ร้อย', 1000: 'พัน', 10000: 'หมื่น', 100000: 'แสน', 1000000: 'ล้าน'}
 
     def number_to_thai(self, number: int) -> str:
+        if number == 0:
+            return self.numbers[number]
+        
+        if (0 > number > 10_000_000):
+            print("-")
+            return "number can not less than 0 or greater than 10,000,000"
+        
         return number
 
 def main():
     sol = Solution()
-    num = int(input())
+    num = int(input("Enter a positive number (0-10,000,000): "))
     print(sol.number_to_thai(num))
 main()
