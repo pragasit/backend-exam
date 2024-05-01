@@ -29,11 +29,14 @@ class Solution:
     def number_to_roman(self, number: int) -> str:
         if number < 0:
             return "number can not less than 0"
-        num_digit = list(str(number))
-        num_digit = list(map(int, num_digit))
+        # num_digit = list(str(number))
+        # num_digit = list(map(int, num_digit))
         number_roman = ""
-        for i in num_digit:
-            number_roman += self.numbers[i]
+        for i in sorted(self.numbers.keys(), reverse=True):
+            count = number // i
+            number_roman += self.numbers[i] * count
+            number %= i
+            # number_roman += self.numbers[i]
         return number_roman
         # for place in [10, 1]:
         #     digit = number // place
