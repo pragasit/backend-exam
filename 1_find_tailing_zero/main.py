@@ -20,32 +20,29 @@ output = number can not be negative
 class Solution:
     
     def find_tailing_zeroes(self, number: int) -> int | str:
-        ans = 0
+        answer = 0
         if number < 0:
-            return "number can not be negative"
+            return "Number can not be negative"
+        elif number == 0:
+            return "Number of last adjacent 0 number : 0"
         else:
-            n = number   ## 7
+            main_number = number
             num = number
-            for i in range(number): ## count 7 
-                # print("font",n)
-                num = num-1
+            for i in range(number):
+                num = num - 1
                 if num > 0:
-
-                    # print("n",n)
-                    # print("num",num)
-                    n = n*num
-                    # print("Back",n)
+                    main_number = main_number * num
                 else:
-                    ans = n
+                    answer = main_number
         count = 0
-        while ans % 10 == 0:
+        while answer % 10 == 0:
             count += 1 
-            ans //= 10
-        return count
+            answer //= 10
+        return "Number of last adjacent 0 number : " + str(count)
 
 #Start
 def main():
     sol = Solution()
-    num = int(input())
-    print(sol.find_tailing_zeroes("",num))
+    number = int(input("Enter the factotial number : "))
+    print(sol.find_tailing_zeroes(number))
 main()
