@@ -32,7 +32,7 @@ class Solution:
             return self.numbers[number]
         
         if not (0 < number < 10_000_000):
-            return "number can not less than 0 or greater than 10,000,000"
+            return "Number can not less than 0 or greater than 10,000,000"
         
         thai_number = []
         for place in [1000000, 100000, 10000, 1000, 100, 10, 1]:
